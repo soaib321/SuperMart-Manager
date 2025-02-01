@@ -18,9 +18,7 @@ import supermart.manager.Users;
  */
 public class LogInScreen extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LogInScreen
-     */
+    
     public LogInScreen() {
         initComponents();
         users = new Users("C:\\Users\\Hp\\OneDrive\\Documents\\NetBeansProjects\\SuperMart Manager\\user.txt"); // Load users from file
@@ -181,12 +179,12 @@ public class LogInScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        // TODO add your handling code here:
+       
                                               
     String username = userF.getText();
     String password = new String(passF.getPassword());
 
-    // Find user in the user list
+   
     User user = users.findUser (username);
     if (user != null) {
         if (!user.isActive()) {
@@ -197,18 +195,18 @@ public class LogInScreen extends javax.swing.JFrame {
         if (user.getPassword().equals(password)) {
             JOptionPane.showMessageDialog(this, username + " Login Successful!");
             this.dispose();
-            // Launch the appropriate screen based on user role
+            
             if (user.getRole().equals("admin")) {
                 new MainForm().setAdminAccess();
                 
             } else if (user.getRole().equals("manager")) {
-                // Launch manager screen
+                
                 new MainForm().setManagerAccess();
-                // new ManagerScreen().setVisible(true); // Uncomment and implement as needed
+               
             } else if (user.getRole().equals("cashier")) {
-                // Launch cashier screen
+                
                 new MainForm().setCashierAccess();
-                // new CashierScreen().setVisible(true); // Uncomment and implement as needed
+                
             }
             
         } else {
@@ -222,7 +220,7 @@ public class LogInScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void clrBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clrBtnActionPerformed
-        // TODO add your handling code here:
+        
         userF.setText("");
         passF.setText("");
     }//GEN-LAST:event_clrBtnActionPerformed
@@ -260,7 +258,7 @@ public class LogInScreen extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LogInScreen().setVisible(true);
