@@ -22,28 +22,17 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ShopManagementScreen extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ShopManagementScreen
-     */
+    
     public ShopManagementScreen() {
         
         initComponents();
-        // Initialize product list and cart
         productList = new java.util.ArrayList<>();
         cart = new ShoppingCart();
-
-        // Load products from the data source
         DataHandler.loadProducts(productList);
-
-        // Initialize table models
         productTableModel = new DefaultTableModel(new String[]{"Product ID", "Product Name", "Price", "Stock"}, 0);
         cartTableModel = new DefaultTableModel(new String[]{"Product ID", "Product Name", "Quantity", "Price", "Total"}, 0);
-
-        // Set the models to the tables
         productTable.setModel(productTableModel);
         cartTable.setModel(cartTableModel);
-
-        // Update the product display
         updateProductDisplay();
         this.setResizable(false);
      
@@ -270,7 +259,7 @@ public class ShopManagementScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartActionPerformed
-        // TODO add your handling code here:
+        
         
         
         int selectedRow = productTable.getSelectedRow();
@@ -316,14 +305,12 @@ public class ShopManagementScreen extends javax.swing.JFrame {
         return;
     }
 
-    // Get the product ID and quantity from the cart
+    
     int productId = (int) cartTableModel.getValueAt(selectedRow, 0);
     int quantity = (int) cartTableModel.getValueAt(selectedRow, 2);
-
-    // Remove the product from the cart
     cart.removeFromCart(productId);
 
-    // Find the product in the product list and increase its stock
+   
     for (Product product : productList) {
         if (product.getProductId() == productId) {
             product.setStock(product.getStock() + quantity);
@@ -331,7 +318,7 @@ public class ShopManagementScreen extends javax.swing.JFrame {
         }
     }
 
-    // Update the displays
+   
     updateCartDisplay();
     updateProductDisplay();
     updateTotalCost();
@@ -341,15 +328,15 @@ public class ShopManagementScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_removeFromCartActionPerformed
 
     private void checkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutActionPerformed
-        // TODO add your handling code here:
+       
                                              
-    // TODO add your handling code here:
+   
     if (cart.getCartItems().isEmpty()) {
         JOptionPane.showMessageDialog(frame, "Your cart is empty. Please add items before checking out.");
         return;
     }
 
-    // Create customer details form
+   
     JFrame customerFrame = new JFrame("Customer Details");
     customerFrame.setSize(400, 300);
     customerFrame.setLayout(null);
@@ -456,13 +443,13 @@ private boolean checkMembership(String customerName) {
         return false;
     }
     
-    customerName = customerName.trim(); // Trim input
+    customerName = customerName.trim(); 
 
     try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Hp\\OneDrive\\Documents\\NetBeansProjects\\SuperMart Manager\\member.txt"))) {
         String line;
         while ((line = reader.readLine()) != null) {
-            String[] data = line.split(",", 2); // Split into max 2 parts to avoid unnecessary errors
-            if (data.length > 0 && data[0].trim().equalsIgnoreCase(customerName)) { // Trim and check name
+            String[] data = line.split(",", 2); 
+            if (data.length > 0 && data[0].trim().equalsIgnoreCase(customerName)) { 
                 return true;
             }
         }
@@ -478,18 +465,18 @@ private boolean checkMembership(String customerName) {
     }//GEN-LAST:event_checkoutActionPerformed
 
     private void clrBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clrBtnActionPerformed
-        // TODO add your handling code here:
+        
         if (cart.getCartItems().isEmpty()) {
         JOptionPane.showMessageDialog(this, "Your cart is already empty.");
         return;
     }
 
-    // Iterate through the cart items and return their quantities to the product list
+    
     for (int i = 0; i < cart.getCartItems().size(); i++) {
         Product product = cart.getCartItems().get(i);
         int quantity = cart.getQuantities().get(i);
 
-        // Find the product in the product list and increase its stock
+        
         for (Product p : productList) {
             if (p.getProductId() == product.getProductId()) {
                 p.setStock(p.getStock() + quantity);
@@ -498,10 +485,10 @@ private boolean checkMembership(String customerName) {
         }
     }
 
-    // Clear the cart
+    
     cart.clearCart();
 
-    // Update the displays
+    
     updateCartDisplay();
     updateProductDisplay();
     updateTotalCost();
@@ -511,11 +498,11 @@ private boolean checkMembership(String customerName) {
     }//GEN-LAST:event_clrBtnActionPerformed
 
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
-        // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_closeBtnActionPerformed
     private void updateCartDisplay() {
-        cartTableModel.setRowCount(0); // Clear existing rows
+        cartTableModel.setRowCount(0); 
         for (int i = 0; i < cart.getCartItems().size(); i++) {
             Product product = cart.getCartItems().get(i);
             int quantity = cart.getQuantities().get(i);
@@ -533,7 +520,7 @@ private boolean checkMembership(String customerName) {
         totalCostLabel.setText(String.format("Total Cost: %.2f TK", totalCost));
     }
      public void updateProductDisplay() {
-        productTableModel.setRowCount(0); // Clear existing rows
+        productTableModel.setRowCount(0); 
         for (Product p : productList) {
             productTableModel.addRow(new Object[]{
                     p.getProductId(),
