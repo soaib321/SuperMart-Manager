@@ -22,22 +22,22 @@ public class ManageProductsScreen extends javax.swing.JFrame {
     public ManageProductsScreen() {
         initComponents(); // Initialize GUI components
 
-        // Create an instance of ShopManagementScreen to access productList
+        
         shopManagement = new ShopManagementScreen();
 
-        // Initialize the table model for the product table
+        
         String[] columnNames = {"Product ID", "Product Name", "Price", "Stock"};
         tableModel = new DefaultTableModel(columnNames, 0);
         productTable.setModel(tableModel); // Set the model to the product table
 
-        // Add selection listener to the product table
+        
         productTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
                     int selectedRow = productTable.getSelectedRow();
                     if (selectedRow != -1) {
-                        // Populate text fields with selected product data
+                       
                         idField.setText(String.valueOf(tableModel.getValueAt(selectedRow, 0)));
                         productField.setText((String) tableModel.getValueAt(selectedRow, 1));
                         priceField.setText(String.valueOf(tableModel.getValueAt(selectedRow, 2)));
@@ -253,7 +253,7 @@ public class ManageProductsScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
+        
         try {
             String name = productField.getText();
             int id = Integer.parseInt(idField.getText());
@@ -270,9 +270,9 @@ public class ManageProductsScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        // TODO add your handling code here:
+        
         try {
-            int id = Integer.parseInt(idField.getText()); // Use ID for deletion
+            int id = Integer.parseInt(idField.getText()); 
 
             boolean productRemoved = shopManagement.getProductList().removeIf(product -> product.getProductId() == id);
 
@@ -289,7 +289,7 @@ public class ManageProductsScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        // TODO add your handling code here:
+       
         try {
             int id = Integer.parseInt(idField.getText());
             double newPrice = Double.parseDouble(priceField.getText());
@@ -318,11 +318,11 @@ public class ManageProductsScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
-        // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_closeButtonActionPerformed
     private void updateProductTable() {
-        // Clear existing rows
+        
         tableModel.setRowCount(0);
         for (Product product : shopManagement.getProductList()) { // Accessing productList from the parent class
             Object[] rowData = {product.getProductId(), product.getName(), product.getPrice(), product.getStock()};
