@@ -20,9 +20,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Members extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MemberDisplay
-     */
+   
     public Members() {
         initComponents();
         loadData();
@@ -170,33 +168,33 @@ public class Members extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        // TODO add your handling code here:
+       
         deleteSelectedMember();
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
-        // TODO add your handling code here:
+       
         loadData();
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
-        // TODO add your handling code here:
+        
         this.dispose();
     }//GEN-LAST:event_closeBtnActionPerformed
 
     private void regBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regBtnActionPerformed
-        // TODO add your handling code here:
+        
         new MembershipRegistration();
     }//GEN-LAST:event_regBtnActionPerformed
     private void loadData() {
     DefaultTableModel model = (DefaultTableModel) membersTable.getModel();
-    model.setRowCount(0); // Clear existing data
+    model.setRowCount(0); 
 
     try (BufferedReader reader = new BufferedReader(new FileReader("member.txt"))) {
         String line;
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            if (data.length == 5) { // Ensure there are exactly 5 columns
+            if (data.length == 5) { 
                 model.addRow(data);
             }
         }
