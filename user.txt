@@ -1,0 +1,7 @@
+admin,admin123,admin,true
+manager1,manager123,manager,true
+cashier1,cashier123,cashier,true
+cashier2,cashier456,cashier,false
+manager2,,manager,false
+soaib,soaib123,manager,true
+Hisenberg,password,cashier,true

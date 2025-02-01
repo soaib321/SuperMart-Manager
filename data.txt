@@ -1,0 +1,29 @@
+1,Bread(1 loaf),40.0,100
+2,Strawberry(1 unit),60.0,250
+3,Apple(1 kg),150.0,120
+4,Rice(1 kg),50.0,34
+5,Sugar(1 kg),80.0,77
+6,Tea(250 g),200.0,90
+7,Coffee(100 g),350.0,67
+9,Potato Chips,30.0,237
+10,Chocolate Bar,70.0,155
+11,Chicken(1 kg),320.0,50
+12,Beef(1 kg),550.0,30
+13,Tomato(1 kg),45.0,130
+14,Milk,45.0,57
+15,Eggs(12 pcs),130.0,110
+16,Orange Juice(1 L),250.0,69
+17,Soap(1 unit),75.0,200
+18,Shampoo(500 ml),480.0,95
+19,Toothpaste(200 g),180.0,103
+20,Hand Wash(250 ml),150.0,75
+21,Detergent Powder(1 kg),220.0,88
+22,Biscuits(1 pack),50.0,140
+23,Yogurt(500 g),180.0,98
+24,Ice Cream(1 L),300.0,120
+25,Cheese(250 g),320.0,60
+26,Butter Cookies(1 tin),350.0,200
+27,Peanut Butter(500 g),450.0,65
+28,Noodles(1 pack),40.0,190
+29,Ketchup(500 ml),200.0,85
+30,Mustard Sauce(250 ml),180.0,70
