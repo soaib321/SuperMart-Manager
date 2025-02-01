@@ -16,11 +16,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ManageProductsScreen extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ManageProductsScreen
-     */
+    
     public ManageProductsScreen() {
-        initComponents(); // Initialize GUI components
+        initComponents(); 
 
         
         shopManagement = new ShopManagementScreen();
@@ -28,7 +26,7 @@ public class ManageProductsScreen extends javax.swing.JFrame {
         
         String[] columnNames = {"Product ID", "Product Name", "Price", "Stock"};
         tableModel = new DefaultTableModel(columnNames, 0);
-        productTable.setModel(tableModel); // Set the model to the product table
+        productTable.setModel(tableModel); 
 
         
         productTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
@@ -260,7 +258,7 @@ public class ManageProductsScreen extends javax.swing.JFrame {
             double price = Double.parseDouble(priceField.getText());
             int stock = Integer.parseInt(stockField.getText());
 
-            shopManagement.getProductList().add(new Product(name,price,stock,id)); // Add product to the list
+            shopManagement.getProductList().add(new Product(name,price,stock,id)); 
             DataHandler.saveProducts(shopManagement.getProductList());
             updateProductTable();
             JOptionPane.showMessageDialog(this, "Product Added Successfully!");
@@ -297,7 +295,7 @@ public class ManageProductsScreen extends javax.swing.JFrame {
 
             boolean productFound = false;
             for (Product product : shopManagement.getProductList()) {
-                if (product.getProductId() == id) { // Compare by ID
+                if (product.getProductId() == id) { 
                     product.setPrice(newPrice);
                     product.setStock(newStock);
                     productFound = true;
