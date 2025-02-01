@@ -41,7 +41,6 @@ public class ShoppingCart {
         }
     }
 
-    // Update the quantity of a product in the cart
     public void updateCartQuantity(int productId, int newQuantity) {
         int index = findProductIndex(productId);
         if (index != -1) {
