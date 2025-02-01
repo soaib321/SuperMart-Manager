@@ -56,7 +56,7 @@ public class Product {
 
     public boolean reduceStock(int quantity) {
         if (quantity > stock) {
-            return false; // Not enough stock
+            return false; 
         }
         stock -= quantity;
         return true;
@@ -71,15 +71,15 @@ public class Product {
         return "ID: " + productId + ", Name: " + name + ", Price: ৳" + price + ", Stock: " + stock;
     }
 
-    // Static methods to manage a list of products
+    
     static List<Product> productList = new ArrayList<>();
 
     public static List<Product> getProductList() {
-        return new ArrayList<>(productList); // Return a copy of the product list
+        return new ArrayList<>(productList); 
     }
 
     public static void setProductList(List<Product> newProductList) {
-        productList = new ArrayList<>(newProductList); // Set a new product list
+        productList = new ArrayList<>(newProductList);
     }
 
     public static void addProduct(Product product) {
@@ -109,7 +109,7 @@ public class Product {
         if (product != null && product.getStock() >= quantity) {
             return product.getPrice() * quantity;
         }
-        return -1; // Invalid product ID or insufficient stock
+        return -1; 
     }
 
     public static void displayAllProducts() {
