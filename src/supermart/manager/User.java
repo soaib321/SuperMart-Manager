@@ -3,8 +3,8 @@ package supermart.manager;
 public class User {
     private String username;
     private String password;
-    private String role; // admin, manager, cashier
-    private boolean isActive; // true for active, false for deactivated
+    private String role; 
+    private boolean isActive; 
 
     public User(String username, String password, String role, boolean isActive) {
         this.username = username;
@@ -13,7 +13,7 @@ public class User {
         this.isActive = isActive;
     }
 
-    // Getters and Setters
+    
     public String getUsername() {
         return username;
     }
