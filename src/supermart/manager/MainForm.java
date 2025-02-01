@@ -171,29 +171,29 @@ public class MainForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void billBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billBtnActionPerformed
-        // TODO add your handling code here:
+      
         
         new ShopManagementScreen().setVisible(true);
     }//GEN-LAST:event_billBtnActionPerformed
 
     private void manageBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageBtnActionPerformed
-        // TODO add your handling code here:
+        
         new ManageProductsScreen().setVisible(true);
     }//GEN-LAST:event_manageBtnActionPerformed
 
     private void memberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberBtnActionPerformed
-        // TODO add your handling code here:
+       
         new Members().setVisible(true);
     }//GEN-LAST:event_memberBtnActionPerformed
 
     private void userBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userBtnActionPerformed
-        // TODO add your handling code here:
+        
  
         new UserManagement();
     }//GEN-LAST:event_userBtnActionPerformed
 
     private void logBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logBtnActionPerformed
-        // TODO add your handling code here:
+       
         this.dispose();
         new LogInScreen().setVisible(true);
     }//GEN-LAST:event_logBtnActionPerformed
@@ -206,9 +206,9 @@ public class MainForm extends javax.swing.JFrame {
         JOptionPane.YES_NO_OPTION, 
         JOptionPane.WARNING_MESSAGE);
     
-    // Check the user's response
+    
     if (confirm == JOptionPane.YES_OPTION) {
-        this.dispose(); // Close the application
+        this.dispose();
     }
     }//GEN-LAST:event_exitBtnActionPerformed
 
@@ -233,21 +233,21 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     public void setManagerAccess() {
-        // Manager can access billing and manage products
+        
         billBtn.setVisible(true);
         manageBtn.setVisible(true);
-        userBtn.setVisible(false); // Hide user management for managers
+        userBtn.setVisible(false); 
         memberBtn.setVisible(true);
         logBtn.setVisible(true);
         exitBtn.setVisible(true);
     }
 
     public void setCashierAccess() {
-        // Cashier can only access billing
+       
         billBtn.setVisible(true);
-        manageBtn.setVisible(false); // Hide manage products for cashiers
-        userBtn.setVisible(false); // Hide user management for cashiers
-        memberBtn.setVisible(true); // Hide members for cashiers
+        manageBtn.setVisible(false); 
+        userBtn.setVisible(false); 
+        memberBtn.setVisible(true); 
         logBtn.setVisible(true);
         exitBtn.setVisible(true);
     }
