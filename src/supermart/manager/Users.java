@@ -36,17 +36,17 @@ public class Users {
                 return user;
             }
         }
-        return null; // User not found
+        return null; 
     }
 
     public void addUser (User user) {
         userList.add(user);
-        // Optionally save to file
+        
     }
 
     public void removeUser (String username) {
         userList.removeIf(user -> user.getUsername().equals(username));
-        // Optionally save to file
+        
     }
 
     public void updateUser (User updatedUser ) {
@@ -56,7 +56,7 @@ public class Users {
                 break;
             }
         }
-        // Optionally save to file
+       
     }
     public void saveUsersToFile(String filePath) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
