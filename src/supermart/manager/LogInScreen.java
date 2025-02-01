@@ -21,7 +21,7 @@ public class LogInScreen extends javax.swing.JFrame {
     
     public LogInScreen() {
         initComponents();
-        users = new Users("C:\\Users\\Hp\\OneDrive\\Documents\\NetBeansProjects\\SuperMart Manager\\user.txt"); // Load users from file
+        users = new Users("C:\\Users\\Hp\\OneDrive\\Documents\\NetBeansProjects\\SuperMart Manager\\user.txt"); 
         this.setResizable(false);
     }
 
