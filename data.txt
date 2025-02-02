@@ -27,3 +27,4 @@
 28,Noodles(1 pack),40.0,190
 29,Ketchup(500 ml),200.0,85
 30,Mustard Sauce(250 ml),180.0,70
+31,Mustard Sauce(100 ml),180.0,70
