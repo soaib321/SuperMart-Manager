@@ -21,7 +21,7 @@ public class UserManagement extends javax.swing.JFrame {
    
     public UserManagement() {
         initComponents();
-        users = new Users("C:\\Users\\Hp\\OneDrive\\Documents\\NetBeansProjects\\SuperMart Manager\\user.txt");
+        users = new Users("C:\\Users\\Hp\\IdeaProjects\\SuperMarket\\src\\spa\\users.txt");
         tableModel = new DefaultTableModel(new String[]{"Username", "Role", "Status"}, 0);
         userTable = new JTable(tableModel);
         userscroll.setViewportView(userTable); 
@@ -263,13 +263,7 @@ public class UserManagement extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-//    private void loadUserData() {
-//        for (User user : users.getUserList()) {
-//            if (!user.getRole().equals("admin")) {
-//                tableModel.addRow(new Object[]{user.getUsername(), user.getRole(), user.isActive() ? "active" : "inactive"});
-//            }
-//        }
-//    }
+
     private void loadUserData() {
     try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Hp\\IdeaProjects\\SuperMarket\\src\\spa\\users.txt"))) {
         String line;
