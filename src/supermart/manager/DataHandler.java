@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DataHandler {
 
-    private static final String FILE_PATH = "C:\\Users\\Hp\\OneDrive\\Documents\\NetBeansProjects\\SuperMart Manager\\data.txt"; //manual path input needed
+    private static final String FILE_PATH = "C:\\Users\\Hp\\OneDrive\\Documents\\GitHub\\SuperMart-Manager\\data.txt"; //manual path input needed
 
     public static void saveProducts(List<Product> productList) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {

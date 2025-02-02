@@ -4,4 +4,4 @@ cashier1,cashier123,cashier,true
 cashier2,cashier456,cashier,false
 manager2,,manager,false
 soaib,soaib123,manager,true
-Hisenberg,password,cashier,true
+rafiq,1234,cashier,true

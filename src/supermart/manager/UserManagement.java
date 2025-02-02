@@ -21,7 +21,7 @@ public class UserManagement extends javax.swing.JFrame {
    
     public UserManagement() {
         initComponents();
-        users = new Users("C:\\Users\\Hp\\IdeaProjects\\SuperMarket\\src\\spa\\users.txt");
+        users = new Users("C:\\Users\\Hp\\OneDrive\\Documents\\GitHub\\SuperMart-Manager\\user.txt");
         tableModel = new DefaultTableModel(new String[]{"Username", "Role", "Status"}, 0);
         userTable = new JTable(tableModel);
         userscroll.setViewportView(userTable); 
@@ -285,7 +285,7 @@ public class UserManagement extends javax.swing.JFrame {
      */
 
     private void loadUserData() {
-    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Hp\\IdeaProjects\\SuperMarket\\src\\spa\\users.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Hp\\OneDrive\\Documents\\GitHub\\SuperMart-Manager\\user.txt"))) {
         String line;
         tableModel.setRowCount(0); 
         boolean isFirstLine = true; 
@@ -320,7 +320,7 @@ public class UserManagement extends javax.swing.JFrame {
 
         User newUser = new User(username, password, role, isActive);
         users.addUser(newUser);
-        users.saveUsersToFile("C:\\Users\\Hp\\IdeaProjects\\SuperMarket\\src\\spa\\users.txt"); // add manually
+        users.saveUsersToFile("C:\\Users\\Hp\\OneDrive\\Documents\\GitHub\\SuperMart-Manager\\user.txt"); // add manually
         tableModel.addRow(new Object[]{username, role, isActive ? "active" : "inactive"});
     }
 
@@ -334,7 +334,7 @@ public class UserManagement extends javax.swing.JFrame {
 
             User updatedUser = new User(username, password, role, isActive);
             users.updateUser(updatedUser);
-            users.saveUsersToFile("C:\\Users\\Hp\\IdeaProjects\\SuperMarket\\src\\spa\\users.txt"); 
+            users.saveUsersToFile("C:\\Users\\Hp\\OneDrive\\Documents\\GitHub\\SuperMart-Manager\\user.txt");
             tableModel.setValueAt(username, selectedRow, 0);
             tableModel.setValueAt(role, selectedRow, 1);
             tableModel.setValueAt(isActive ? "active" : "inactive", selectedRow, 2);
@@ -346,7 +346,7 @@ public class UserManagement extends javax.swing.JFrame {
         if (selectedRow != -1) {
             String username = (String) tableModel.getValueAt(selectedRow, 0);
             users.removeUser(username);
-            users.saveUsersToFile("C:\\Users\\Hp\\IdeaProjects\\SuperMarket\\src\\spa\\users.txt"); 
+            users.saveUsersToFile("C:\\Users\\Hp\\OneDrive\\Documents\\GitHub\\SuperMart-Manager\\user.txt");
             tableModel.removeRow(selectedRow);
         }
     }
