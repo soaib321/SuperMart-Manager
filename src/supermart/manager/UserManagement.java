@@ -42,7 +42,7 @@ public class UserManagement extends javax.swing.JFrame {
 
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -61,6 +61,7 @@ public class UserManagement extends javax.swing.JFrame {
         deleteButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        clrBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("User Dashboard");
@@ -151,26 +152,21 @@ public class UserManagement extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermart/icon/user.png"))); // NOI18N
         jLabel5.setText("Manage Users");
 
+        clrBtn.setBackground(new java.awt.Color(153, 153, 153));
+        clrBtn.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        clrBtn.setText("Clear");
+        clrBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clrBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(closeButton)
-                            .addComponent(addButton))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(updateButton)
-                                .addGap(32, 32, 32)
-                                .addComponent(deleteButton))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -187,7 +183,22 @@ public class UserManagement extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(roleComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(statusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(121, 121, 121)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(closeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(updateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(40, 40, 40)
+                                .addComponent(deleteButton))
+                            .addComponent(clrBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(userscroll, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -221,9 +232,11 @@ public class UserManagement extends javax.swing.JFrame {
                             .addComponent(addButton)
                             .addComponent(updateButton)
                             .addComponent(deleteButton))))
-                .addGap(43, 43, 43)
-                .addComponent(closeButton)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(closeButton)
+                    .addComponent(clrBtn))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -238,27 +251,34 @@ public class UserManagement extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {                                          
         
         addUser();
-    }//GEN-LAST:event_addButtonActionPerformed
+    }                                         
 
-    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         
         updateUser();
-    }//GEN-LAST:event_updateButtonActionPerformed
+    }                                            
 
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
        
         deleteUser();
-    }//GEN-LAST:event_deleteButtonActionPerformed
+    }                                            
 
-    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
+    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
        
         dispose();
-    }//GEN-LAST:event_closeButtonActionPerformed
+    }                                           
+
+    private void clrBtnActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        usernameField.setText(""); 
+        passwordField.setText("");
+        roleComboBox.setSelectedIndex(0); 
+        statusComboBox.setSelectedIndex(0);
+    }                                      
 
     /**
      * @param args the command line arguments
@@ -333,8 +353,9 @@ public class UserManagement extends javax.swing.JFrame {
     
     private DefaultTableModel tableModel;
     private Users users;
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton closeButton;
+    private javax.swing.JButton clrBtn;
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -348,5 +369,5 @@ public class UserManagement extends javax.swing.JFrame {
     private javax.swing.JTable userTable;
     private javax.swing.JTextField usernameField;
     private javax.swing.JScrollPane userscroll;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
